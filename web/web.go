@@ -1,76 +1,50 @@
 package web
 
 import (
-	"net/url"
-	"strings"
-
-	scriptish "github.com/ganbarodigital/go_scriptish"
+	"github.com/tr00datp00nar/fn"
 )
-
-func rawUrlEncode(str string) string {
-	return strings.Replace(url.QueryEscape(str), "+", "%20", -1)
-}
 
 func searchBrave(query string) {
 	q := "https://search.brave.com/search?q=" + query
-	pipeline := scriptish.NewPipeline(
-		scriptish.Exec("xdg-open", q),
-	)
-	pipeline.Exec()
+	fn.OpenURL(q)
 }
 
 func searchGithub(query string) {
 	q := "https://github.com/search?q=" + query
-	pipeline := scriptish.NewPipeline(
-		scriptish.Exec("xdg-open", q),
-	)
-	pipeline.Exec()
+	fn.OpenURL(q)
 }
 
 func searchWikipedia(query string) {
 	q := "https://en.wikipedia.org/wiki/" + query
-	pipeline := scriptish.NewPipeline(
-		scriptish.Exec("xdg-open", q),
-	)
-	pipeline.Exec()
+	fn.OpenURL(q)
 }
 
 func searchStackOverflow(query string) {
 	q := "https://stackoverflow.com/search?q=" + query
-	pipeline := scriptish.NewPipeline(
-		scriptish.Exec("xdg-open", q),
-	)
-	pipeline.Exec()
+	fn.OpenURL(q)
 }
 
 func searchYoutube(query string) {
 	q := "https://www.youtube.com/results?search_query=" + query
-	pipeline := scriptish.NewPipeline(
-		scriptish.Exec("xdg-open", q),
-	)
-	pipeline.Exec()
+	fn.OpenURL(q)
 }
 
 func searchGoogle(query string) {
 	q := "https://www.google.com/search?q=" + query
-	pipeline := scriptish.NewPipeline(
-		scriptish.Exec("xdg-open", q),
-	)
-	pipeline.Exec()
+	fn.OpenURL(q)
 }
 
 func searchAmazon(query string) {
 	q := "https://www.amazon.com/s?k=" + query
-	pipeline := scriptish.NewPipeline(
-		scriptish.Exec("xdg-open", q),
-	)
-	pipeline.Exec()
+	fn.OpenURL(q)
 }
 
 func searchWolfram(query string) {
 	q := "https://www.wolframalpha.com/input?i=" + query
-	pipeline := scriptish.NewPipeline(
-		scriptish.Exec("xdg-open", q),
-	)
-	pipeline.Exec()
+	fn.OpenURL(q)
+}
+
+func searchMyAnimeList(query string) {
+	q := "https://myanimelist.net/search/all?q=" + query
+	fn.OpenURL(q)
 }
