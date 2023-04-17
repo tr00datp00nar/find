@@ -1,11 +1,8 @@
 package web
 
 import (
-	"strings"
-
 	Z "github.com/rwxrob/bonzai/z"
 	"github.com/rwxrob/help"
-	"github.com/rwxrob/to"
 
 	"github.com/tr00datp00nar/fn"
 )
@@ -45,10 +42,8 @@ var amazonCmd = &Z.Cmd{
 	},
 
 	Call: func(_ *Z.Cmd, args ...string) error {
-		stringQuery := to.String(args)
-		trimPre := strings.ReplaceAll(stringQuery, "[", "")
-		trimSuf := strings.ReplaceAll(trimPre, "]", "")
-		query := fn.RawUrlEncode(trimSuf)
+		a := Z.ArgsOrIn(args)
+		query := fn.RawUrlEncode(a)
 		searchAmazon(query)
 		return nil
 	},
@@ -67,10 +62,8 @@ var braveCmd = &Z.Cmd{
 	},
 
 	Call: func(_ *Z.Cmd, args ...string) error {
-		stringQuery := to.String(args)
-		trimPre := strings.ReplaceAll(stringQuery, "[", "")
-		trimSuf := strings.ReplaceAll(trimPre, "]", "")
-		query := fn.RawUrlEncode(trimSuf)
+		a := Z.ArgsOrIn(args)
+		query := fn.RawUrlEncode(a)
 		searchBrave(query)
 		return nil
 	},
@@ -90,10 +83,8 @@ var githubCmd = &Z.Cmd{
 	},
 
 	Call: func(_ *Z.Cmd, args ...string) error {
-		stringQuery := to.String(args)
-		trimPre := strings.ReplaceAll(stringQuery, "[", "")
-		trimSuf := strings.ReplaceAll(trimPre, "]", "")
-		query := fn.RawUrlEncode(trimSuf)
+		a := Z.ArgsOrIn(args)
+		query := fn.RawUrlEncode(a)
 		searchGithub(query)
 		return nil
 	},
@@ -112,10 +103,8 @@ var googleCmd = &Z.Cmd{
 	},
 
 	Call: func(_ *Z.Cmd, args ...string) error {
-		stringQuery := to.String(args)
-		trimPre := strings.ReplaceAll(stringQuery, "[", "")
-		trimSuf := strings.ReplaceAll(trimPre, "]", "")
-		query := fn.RawUrlEncode(trimSuf)
+		a := Z.ArgsOrIn(args)
+		query := fn.RawUrlEncode(a)
 		searchGoogle(query)
 		return nil
 	},
@@ -134,10 +123,8 @@ var stackOverflowCmd = &Z.Cmd{
 	},
 
 	Call: func(_ *Z.Cmd, args ...string) error {
-		stringQuery := to.String(args)
-		trimPre := strings.ReplaceAll(stringQuery, "[", "")
-		trimSuf := strings.ReplaceAll(trimPre, "]", "")
-		query := fn.RawUrlEncode(trimSuf)
+		a := Z.ArgsOrIn(args)
+		query := fn.RawUrlEncode(a)
 		searchStackOverflow(query)
 		return nil
 	},
@@ -157,10 +144,8 @@ var wikipediaCmd = &Z.Cmd{
 	},
 
 	Call: func(_ *Z.Cmd, args ...string) error {
-		stringQuery := to.String(args)
-		trimPre := strings.ReplaceAll(stringQuery, "[", "")
-		trimSuf := strings.ReplaceAll(trimPre, "]", "")
-		query := fn.RawUrlEncode(trimSuf)
+		a := Z.ArgsOrIn(args)
+		query := fn.RawUrlEncode(a)
 		searchWikipedia(query)
 		return nil
 	},
@@ -179,10 +164,8 @@ var wolframCmd = &Z.Cmd{
 	},
 
 	Call: func(_ *Z.Cmd, args ...string) error {
-		stringQuery := to.String(args)
-		trimPre := strings.ReplaceAll(stringQuery, "[", "")
-		trimSuf := strings.ReplaceAll(trimPre, "]", "")
-		query := fn.RawUrlEncode(trimSuf)
+		a := Z.ArgsOrIn(args)
+		query := fn.RawUrlEncode(a)
 		searchWolfram(query)
 		return nil
 	},
@@ -202,10 +185,8 @@ var youtubeCmd = &Z.Cmd{
 	},
 
 	Call: func(_ *Z.Cmd, args ...string) error {
-		stringQuery := to.String(args)
-		trimPre := strings.ReplaceAll(stringQuery, "[", "")
-		trimSuf := strings.ReplaceAll(trimPre, "]", "")
-		query := fn.RawUrlEncode(trimSuf)
+		a := Z.ArgsOrIn(args)
+		query := fn.RawUrlEncode(a)
 		searchYoutube(query)
 		return nil
 	},
@@ -223,10 +204,8 @@ var malCmd = &Z.Cmd{
 	Commands: []*Z.Cmd{help.Cmd},
 
 	Call: func(_ *Z.Cmd, args ...string) error {
-		stringQuery := to.String(args)
-		trimPre := strings.ReplaceAll(stringQuery, "[", "")
-		trimSuf := strings.ReplaceAll(trimPre, "]", "")
-		query := fn.RawUrlEncode(trimSuf)
+		a := Z.ArgsOrIn(args)
+		query := fn.RawUrlEncode(a)
 		searchMyAnimeList(query)
 		return nil
 	},
